@@ -6,42 +6,6 @@ KNOWLEDGE OS is an editorial, portfolio-grade research workspace powered by a fu
 
 ---
 
-## Architecture Overview
-
-```mermaid
-flowchart TD
-    subgraph Ingestion["Document Ingestion Pipeline"]
-        A[User Upload / Sample Papers] --> B[Text Extractor: PDF, TXT, MD, CSV, JSON]
-        B --> C[Boundary-Aware Semantic Chunker]
-        C --> D[Embedding Generator: Gemini text-embedding-004]
-        D --> E[(Persistent Vector Store & Metadata)]
-    end
-
-    subgraph Retrieval["Hybrid Retrieval Engine"]
-        F[Research Inquiry / Question] --> G[Dense Semantic Cosine Similarity]
-        F --> H[Sparse Lexical BM25 Ranking]
-        G & H --> I[Convex Linear Combination alpha = 0.75]
-        I --> J[Top-K Scored Evidence Passages]
-    end
-
-    subgraph Generation["Grounded Generation & Auditing"]
-        J --> K[Gemini 3.8 Flash Synthesizer]
-        K --> L[Server-Side Citation Validation Pipeline]
-        L --> M[Interactive Grounded Answer with [1] [2] Provenance]
-    end
-
-    subgraph Workspaces["Research Workspaces"]
-        M --> N[Research Desk]
-        E --> O[Knowledge Constellation Atlas]
-        E --> P[Cross-Document Comparison]
-        M --> Q[Research Briefs Generator]
-        E --> R[Document Reader]
-        M --> S[Observatory & Live Benchmarks]
-    end
-```
-
----
-
 ## Core Features
 
 1. **Research Desk (Primary Q&A Workspace)**:
