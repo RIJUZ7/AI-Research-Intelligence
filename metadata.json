@@ -1,0 +1,6 @@
+{
+  "name": "KNOWLEDGE OS",
+  "description": "The Personal Research Intelligence System. Turn documents into understanding with a grounded RAG workspace, citations, and knowledge atlas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
